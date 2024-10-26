@@ -14,11 +14,12 @@
 // };
 
 import mongoose from 'mongoose';
+const colors = require("colors");
 
 export const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.MONGODB_URI, {});
-    console.log(`Database Connected Succefully ${conn.connection.host}`);
+    console.log(`Database Connected Succefully ${conn.connection.host}`.bgBlue);
   } catch (error) {
     console.log(`error : ${error.message}`);
   }
